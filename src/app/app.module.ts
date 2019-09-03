@@ -10,6 +10,11 @@ import { HomeComponent } from './home/home.component';
 import { SignupComponent } from './signup/signup.component';
 import { LayoutComponent } from './layout/layout.component';
 import { ProfileComponent } from './profile/profile.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
+import { JobComponent } from './job/job.component';
+import { ClientComponent } from './client/client.component';
+import { EmployerComponent } from './employer/employer.component';
+import { ContactusComponent } from './contactus/contactus.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +22,12 @@ import { ProfileComponent } from './profile/profile.component';
     HomeComponent,
     SignupComponent,
     LayoutComponent,
-    ProfileComponent
+    ProfileComponent,
+    AboutusComponent,
+    JobComponent,
+    ClientComponent,
+    EmployerComponent,
+    ContactusComponent
   ],
   imports: [
     BrowserModule,

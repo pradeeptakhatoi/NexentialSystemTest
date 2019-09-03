@@ -1,22 +1,22 @@
 <div class="wrapper">
   <div class="topnav">
 
-    <a class="active" href="#home">Demo App</a>
+    <a routerLink="/">Demo App</a>
 
     <div class="topnav-right">
-      <a href="#search">Home</a>
-      <a href="#about">About Us</a>
-      <a href="#search">Jobs</a>
-      <a href="#search">Clients</a>
-      <a href="#search">Employers</a>
-      <a href="#search">Contact Us</a>
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+      <a routerLink="/aboutus" routerLinkActive="active">About Us</a>
+      <a routerLink="/job" routerLinkActive="active">Jobs</a>
+      <a routerLink="/client" routerLinkActive="active">Clients</a>
+      <a routerLink="/employer" routerLinkActive="active">Employers</a>
+      <a routerLink="/contactus" routerLinkActive="active">Contact Us</a>
     </div>
   </div>
 
   <div class="content">
-      <router-outlet></router-outlet>
+    <router-outlet></router-outlet>
   </div>
-  
+
   <div style="clear: both;">&nbsp;</div>
 
   <div class="footer">
