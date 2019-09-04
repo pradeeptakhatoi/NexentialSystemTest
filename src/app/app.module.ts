@@ -16,6 +16,7 @@ import { JobComponent } from './job/job.component';
 import { ClientComponent } from './client/client.component';
 import { EmployerComponent } from './employer/employer.component';
 import { ContactusComponent } from './contactus/contactus.component';
+import { UserComponent } from './model/user/user.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ContactusComponent } from './contactus/contactus.component';
     JobComponent,
     ClientComponent,
     EmployerComponent,
-    ContactusComponent
+    ContactusComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,

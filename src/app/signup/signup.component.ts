@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
+import { UserService } from '../service/user.service';
 
 @Component({
   selector: 'app-signup',
@@ -13,7 +15,9 @@ export class SignupComponent implements OnInit {
   submitted = false;
 
   constructor(
-    public fb: FormBuilder,
+    private fb: FormBuilder,
+    private router: Router,
+    private userService: UserService,
     public dialogRef: MatDialogRef<SignupComponent>) { }
 
   ngOnInit() {
@@ -32,7 +36,12 @@ export class SignupComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
     if (this.signupForm.valid) {
-      console.log(this.signupForm);
+      console.log('Create User');
+      this.userService.createUser(this.signupForm.value).subscribe(data => {
+        this.router.navigate(['profile']);
+      }, error => {
+        alert(error);
+      });
     }
   }
 
