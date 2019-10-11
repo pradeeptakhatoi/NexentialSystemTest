@@ -5,6 +5,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material';
 import { MatSliderModule } from '@angular/material/slider';
 
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { environment } from '../environments/environment';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -16,7 +20,7 @@ import { JobComponent } from './job/job.component';
 import { ClientComponent } from './client/client.component';
 import { EmployerComponent } from './employer/employer.component';
 import { ContactusComponent } from './contactus/contactus.component';
-import { UserComponent } from './model/user/user.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,8 +33,7 @@ import { UserComponent } from './model/user/user.component';
     JobComponent,
     ClientComponent,
     EmployerComponent,
-    ContactusComponent,
-    UserComponent
+    ContactusComponent,    
   ],
   imports: [
     BrowserModule,
@@ -38,9 +41,13 @@ import { UserComponent } from './model/user/user.component';
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     MatDialogModule,
-    MatSliderModule
+    MatSliderModule,
+    AngularFireModule.initializeApp(environment.firebase),
+ 	  AngularFirestoreModule,
   ],
+  entryComponents: [SignupComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

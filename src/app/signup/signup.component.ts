@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialogRef } from '@angular/material';
+import { Component, OnInit, Inject } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from '../service/user.service';
@@ -18,7 +18,8 @@ export class SignupComponent implements OnInit {
     private fb: FormBuilder,
     private router: Router,
     private userService: UserService,
-    public dialogRef: MatDialogRef<SignupComponent>) { }
+    public dialogRef: MatDialogRef<SignupComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit() {
     this.signupForm = this.fb.group({
@@ -37,11 +38,18 @@ export class SignupComponent implements OnInit {
     this.submitted = true;
     if (this.signupForm.valid) {
       console.log('Create User');
-      this.userService.createUser(this.signupForm.value).subscribe(data => {
-        this.router.navigate(['profile']);
-      }, error => {
-        alert(error);
-      });
+      // this.userService.createUser(this.signupForm.value)
+      //   .then(
+      //     res => {
+      //       this.signupForm.reset();
+      //       this.router.navigate(['/profile']);
+      //     }
+      //   )
+      // this.userService.createUser(this.signupForm.value).subscribe(data => {
+      //   this.router.navigate(['profile']);
+      // }, error => {
+      //   alert(error);
+      // });
     }
   }
 

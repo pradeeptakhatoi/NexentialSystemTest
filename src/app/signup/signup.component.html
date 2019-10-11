@@ -63,7 +63,9 @@
                 Age
               </div>
               <div class="col-sm-8">
+                <span>20</span>
                 <mat-slider min="20" max="60" step="1" value="20" formControlName="age"></mat-slider>
+                <span>60</span>
                 <div
                   *ngIf="signupForm.get('first_name').invalid && (signupForm.get('first_name').dirty || signupForm.get('first_name').touched)"
                   class="hasError">
